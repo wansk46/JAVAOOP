@@ -8,16 +8,62 @@ public class App {
 
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
-        Vehicle vehcleA=new Vehicle("Car A", "AUDI");
-        vehcleA.speedUp( 30 );
-        Vehicle vehcleB=new Vehicle("Car B", "BENZ");
-        vehcleB.speedUp( 100 );
+        Vehicle vehicleA=new Vehicle("Car A", "AUDI");
+        vehicleA.speedUp( 30 );
+        Vehicle vehicleB=new Vehicle("Car B", "BENZ");
+        vehicleB.speedUp( 100 );
         Car car=new Car("My Car","Goodbye");
         car.speedUp( 201 );
         car.speedUp( 180 );
 
+        Bus bus=new Bus("My Bus","OOCL");
+        bus.speedUp( 70 );
+        bus.speedUp( 201 );
+
+
+        Driver tommy = new Driver(vehicleA,"Tommy");
+        tommy.speedUp(50);
+        Driver jacky = new Driver(car,"Jacky");
+        jacky.speedUp(111);
+        Driver baby = new Driver(bus,"Baby");
+        baby.speedUp(666);
+
     }
 
+}
+
+class Driver{
+    private final Vehicle vehicle;
+    private final String name;
+
+    public Driver(Vehicle vehicle,String name){
+        this.vehicle=vehicle;
+        this.name=name;
+    }
+
+    public void speedUp(int i){
+        System.out.println("Driver Name:"+this.name+" Car "+this.vehicle.name);
+        this.vehicle.speedUp( i );
+    }
+
+
+}
+
+class Bus extends Vehicle{
+    public Bus(String name,String brand){
+        super(name,brand);
+    }
+
+    @Override
+    public void speedUp(int i) {
+        if (i<80){
+            super.speedUp( i );
+        }else {
+            System.out.println("It can't speed up");
+        }
+        System.out.println("driving bus");
+
+    }
 }
 
 class Car extends Vehicle{
@@ -36,8 +82,8 @@ class Car extends Vehicle{
 }
 
 class Vehicle {
-    private String name;
-    private String brand;
+    public String name;
+    public String brand;
 
 
     public Vehicle(String name,String brand){
