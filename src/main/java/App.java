@@ -8,5 +8,26 @@ public class App {
 
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
+        Vehicle vehcleA=new Vehicle("Car A", "AUDI");
+        vehcleA.speedUp( 30 );
+        Vehicle vehcleB=new Vehicle("Car B", "BENZ");
+        vehcleB.speedUp( 100 );
+    }
+
+}
+
+
+class Vehicle {
+    private String name;
+    private String brand;
+
+    public Vehicle(String name,String brand){
+        this.name=name;
+        this.brand=brand;
+
+    }
+    public void speedUp(int i){
+        System.out.println("Name:"+this.name+" brand:"+this.brand+" Speed:"+i);
+
     }
 }
