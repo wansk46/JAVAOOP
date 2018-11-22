@@ -12,20 +12,41 @@ public class App {
         vehcleA.speedUp( 30 );
         Vehicle vehcleB=new Vehicle("Car B", "BENZ");
         vehcleB.speedUp( 100 );
+        Car car=new Car("My Car","Goodbye");
+        car.speedUp( 201 );
+        car.speedUp( 180 );
+
     }
 
 }
 
+class Car extends Vehicle{
+    public Car(String name,String brand){
+        super(name,brand);
+    }
+
+    @Override
+    public void speedUp(int i) {
+        if (i<200){
+            super.speedUp( i );
+        }else {
+            System.out.println("It can't speed up");
+        }
+    }
+}
 
 class Vehicle {
     private String name;
     private String brand;
+
 
     public Vehicle(String name,String brand){
         this.name=name;
         this.brand=brand;
 
     }
+
+
     public void speedUp(int i){
         System.out.println("Name:"+this.name+" brand:"+this.brand+" Speed:"+i);
 
