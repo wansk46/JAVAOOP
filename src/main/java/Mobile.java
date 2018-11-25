@@ -1,7 +1,7 @@
 public class Mobile {
     private String name;
     private String color;
-    private String brand;
+    public String brand;
 
     public Mobile(String name, String color, String brand) {
         this.name = name;
@@ -10,7 +10,12 @@ public class Mobile {
     }
 
     public void call(String message) {
-        System.out.printf( "Message : %s\n", message );
+        if ((this.brand == "iphone" ) && (message.length()>10) || (this.brand == "android" ) && (message.length()>15)) {
+            System.out.printf("Message cannot be sent\n");
+        }else {
+            System.out.printf( "Message : %s\n", message );
+        }
+
     }
 
     public void printInfo() {

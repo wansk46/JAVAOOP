@@ -8,13 +8,27 @@ public class App {
 
     public static void main(String[] args) {
 
-        Mobile iphone=new Mobile( "I am mobile","black","mobile");
-        iphone.call( "mobile" );
-        iphone.printInfo();
+        Mobile mobile=new Mobile( "I am mobile","black","mobile");
+        mobile.call( "mobile" );
+        mobile.printInfo();
+
         Iphone apple=new Iphone( "I am iphone","black","iphone");
-        apple.call("iphone");
+        apple.call("iphone12345678910");
+
+        Iphone apple1=new Iphone( "I am iphone","black","iphone");
+        apple1.call("iphone");
+
         Android android=new Android( "I am android","black","android");
-        android.call("android");
+        android.call("android12345678910");
+
+        Android android1=new Android( "I am android","black","android");
+        android1.call("android");
+
+        Person person1=new Person("Skittle",apple);
+        person1.call("test123456789");
+
+        Person person2=new Person("WANSK",android);
+        person2.call("test1234567891011");
 
 
     }
